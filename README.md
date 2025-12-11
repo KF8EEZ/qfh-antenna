@@ -19,5 +19,5 @@ This calculator is referred to everywhere:
 
 ## GPS design L1 band
 
-https://forum.allaboutcircuits.com/threads/diy-gps-module-qfh-antenna.110474/
-https://lea.hamradio.si/~s53mv/navsats/analog.html
+- <https://forum.allaboutcircuits.com/threads/diy-gps-module-qfh-antenna.110474/>
+- <https://lea.hamradio.si/~s53mv/navsats/analog.html>
