@@ -23,3 +23,5 @@ This calculator is referred to everywhere:
 - <https://lea.hamradio.si/~s53mv/navsats/analog.html>
 - <http://schripsema.org/pa3hdf/projects/gpsantenna/gpsantenna.html>
 - <https://www.scribd.com/doc/61729826/A-Home-Made-Helical-Antenna-for-a-GPS>
+  - apparently a screenshot from another link that is dead. 
+  - I got my own [screenshot](/refs/2025-12-12-helical-capture.png)
