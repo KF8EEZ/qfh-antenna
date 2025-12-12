@@ -21,3 +21,5 @@ This calculator is referred to everywhere:
 
 - <https://forum.allaboutcircuits.com/threads/diy-gps-module-qfh-antenna.110474/>
 - <https://lea.hamradio.si/~s53mv/navsats/analog.html>
+- <http://schripsema.org/pa3hdf/projects/gpsantenna/gpsantenna.html>
+- <https://www.scribd.com/doc/61729826/A-Home-Made-Helical-Antenna-for-a-GPS>
