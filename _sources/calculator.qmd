@@ -1,0 +1,72 @@
+This is based on <https://jcoppens.com/ant/qfh/calc.en.php> which now seems to be down but can be found on the internet archive at <https://web.archive.org/web/20250915134142/https://jcoppens.com/ant/qfh/calc.en.php>.
+
+## Python imports
+
+```{python}
+import numpy as np
+from scipy.constants import speed_of_light
+```
+
+## Design parameters
+
+```{python}
+frequency_MHz = 137.5 # antenna operating frequency
+number_turns = 1.0 # number of turns to antenna
+bending_radius_mm = 15.0 # wrad ? 
+conductor_diameter_mm = 3.0 # wdiam ? 
+width_height_ratio = 0.44
+```
+
+
+## Results
+
+### Wavelength in free space
+
+```{python}
+wavelength = speed_of_light/(frequency_MHz*1e6) # meters
+```
+
+### Effective wavelength
+
+This is a correction for the size of the wire. 
+
+```{python}
+wire_diameter_effective_mm = 
+```
+
+## Legend from original
+
+This calculator generates a lot of data! Take care in the use of the information in order not to make mistakes...
+Here's a little explanation:
+
+
+Design frequency
+Evident?
+Number of turns (twist)
+What's the twist of the antenna? (normally 0.5 (180 degrees)
+Length of one turn
+A few variations of the antenna exist. Normally the circumference (length of the loop) is 1 wavelength, but 1.5 wavelength and 2 wavelength versions exist.
+Bending diameter
+As it's impossible to bend the corner abruptly at 90 degrees, this value is needed for the calculations. It's measured from the bending center to the center of the tube.
+Conductor diameter
+External diameter of the tube or coax cable.
+Diameter/height ratio
+Most frequently this ratio is 0.44, but slightly lower values (0.3 to 0.4) give better horizon coverage.
+Wavelength
+Wavelength, corresponding to the selected frequency.
+Compensated wavelength
+Wavelength, compensated according to the conductor diameter.
+Bending correction
+Correction value needed according to the bending diameter.
+Total length
+Total length of the loop, before compensation.
+Total loop cmpensated length
+Total length of the loop, compensated for the bending effect, and the fact that the loop must be slightly larger (or smaller). This is the amount of tubing necessary for this loop.
+Compensated vertical separation
+Vertical separation (without the 'bends').
+Compensated horizontal separation
+This is in fact the horizontal part without the 'bends', and corresponds to the horizontal pipe necessary to support the cable.
+Antenna height
+Height of the loop (twisted!).
+Internal diameter
+The diameter of the (imaginary) cylinder on which the loop would be wound.
