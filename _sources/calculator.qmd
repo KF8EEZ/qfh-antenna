@@ -1,38 +1,100 @@
 This is based on <https://jcoppens.com/ant/qfh/calc.en.php> which now seems to be down but can be found on the internet archive at <https://web.archive.org/web/20250915134142/https://jcoppens.com/ant/qfh/calc.en.php>.
 
+For testing of javascript in original, I used this page <https://jsconsole.com/>
+
 ## Python imports
+
+Compute wavelength. Original website used $c=3\times 10^8$ m/s. For testing I'm using that value here. 
 
 ```{python}
 import numpy as np
-from scipy.constants import speed_of_light
+# from scipy.constants import speed_of_light
+speed_of_light = 3e8 # m/s to match original for testing
 ```
 
 ## Design parameters
 
 ```{python}
-frequency_MHz = 137.5 # antenna operating frequency
-number_turns = 1.0 # number of turns to antenna
-bending_radius_mm = 15.0 # wrad ? 
-conductor_diameter_mm = 3.0 # wdiam ? 
-width_height_ratio = 0.44
+frequency_MHz = 137.5 # antenna operating frequency, freq
+number_turns = 1.0 # number of turns to antenna, turns
+length_of_one_turn = 1.0 # measured in wavelengths, [0.25, 0.5, 0.75, 1.0] rwavel
+bending_radius_mm = 15.0 # wrad 
+wire_diameter_mm = 3.0 # diam? , wdiam ?
+width_height_ratio = 0.44 # ratio
 ```
-
 
 ## Results
 
 ### Wavelength in free space
 
 ```{python}
-wavelength = speed_of_light/(frequency_MHz*1e6) # meters
+wavelength = speed_of_light/(frequency_MHz*1e6) # meters, wavel
 ```
 
-### Effective wavelength
+### Compensated wavelength
 
 This is a correction for the size of the wire. 
 
 ```{python}
-wire_diameter_effective_mm = 
+wire_diameter_effective_mm = wire_diameter_mm
+if wire_diameter_effective_mm > 15.0:
+    wire_diameter_effective_mm = 15.0
 ```
+
+```{python}
+#| label: compute-compensated-wavelength
+def delta_length(diam):
+
+    # this is a table of corrections copied directly from qfhcalc.js
+    # the index appears to translate directly to the wire diameter in mm
+    tbl = np.array([1.045, 1.053, 1.060, 1.064, 1.068, 1.070, 1.070, 1.071, 
+             1.071, 1.070, 1.070, 1.070, 1.070, 1.069, 1.069, 1.068,
+	     1.067])
+    intv = int(np.floor(diam))
+    print(intv,tbl[intv])
+    dl = tbl[intv] +  (tbl[intv+1]-tbl[intv])*(diam-intv)
+    return dl
+
+compensated_wavelength = wavelength * delta_length(wire_diameter_effective_mm) # wavelc
+    
+```
+
+### Bending correction
+
+```{python}
+#| label: bending-correction
+bending_correction_mm = 2*bending_radius_mm - np.pi*bending_radius_mm/2.0 # bcorr
+```
+
+### Optimal conductor diameter
+
+This is a confusing calculation in the original because it depends upon the conductor diameter.
+
+```{python}
+#|label: optimal-conductor
+# factor of 1000 converts meter to millimeter
+# factor of 0.0088 is in original code, don't know what it is
+optimal_diameter_mm = 0.0088 * compensated_wavelength * 1000.0
+```
+
+### Larger loop
+
+This is also referred to as loop 1
+
+```{python}
+#| label: larger-loop-values
+total_length_lg = compensated_wavelength * 1.026 # total1
+total_compensated_length_lg = total_length_lg + 4 * bending_correction_mm/1000 # total1c
+horizontal_separator_lg =  0.5 *  total_compensated_length_lg/ \
+           (1 + np.sqrt(1/width_height_ratio**2 + (number_turns*np.pi)**2)) # rad1, D1=
+horizontal_compensated_separator_lg = horizontal_separator_lg - 2*bending_radius_mm/1000.0 # rad1c, D1C=
+vertical_separation_lg = (total_compensated_length_lg - 2*horizontal_separator_lg)/2 # vert1
+vertical_separation_compensated_lg = vertical_separation_lg - 2*bending_radius_mm/1000.0 # vert1c
+internal_diameter_lg = horizontal_separator_lg - wire_diameter_mm/1000.0 #idiam1, Di1=
+height_lg = horizontal_separator_lg / width_height_ratio # height1, H1=
+```
+
+### Smaller loop
 
 ## Legend from original
 
