@@ -35,6 +35,7 @@ function deltal(diam) {
   return (tbl[intv] + (tbl[intv+1]-tbl[intv])*(diam-intv))
 }
 
+    // function appears not to be used - APN
 function deltaf(diam) {
   var tbl = [1.013, 1.014, 1.015, 1.016, 1.017, 1.018, 1.020, 1.022, 
              1.025, 1.027, 1.030, 1.033, 1.036, 1.041, 1.044, 1.049,
@@ -44,12 +45,12 @@ function deltaf(diam) {
 }
 
 function compute(form) {
-  freq = parseFloat(form.freq.value);
-  wdiam = parseFloat(form.wdiam.value);
-  wrad = parseFloat(form.wrad.value);
-  ratio = parseFloat(form.ratio.value);
-  turns = parseFloat(form.turns.value);
-  nrwavel = parseFloat(form.nrwavel.value);
+  freq = parseFloat(form.freq.value);   // frequency
+  wdiam = parseFloat(form.wdiam.value); //
+  wrad = parseFloat(form.wrad.value);   // bending radius
+  ratio = parseFloat(form.ratio.value); // width/height ratio 
+  turns = parseFloat(form.turns.value); // number of turns
+  nrwavel = parseFloat(form.nrwavel.value); // length of one turn in wavelengths
 
   var wavel = 300000/freq;
   document.getElementById('wavel').innerHTML = parseInt(wavel*10)/10;
