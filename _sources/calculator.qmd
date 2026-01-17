@@ -8,6 +8,7 @@ Compute wavelength. Original website used $c=3\times 10^8$ m/s. For testing I'm 
 
 ```{python}
 import numpy as np
+import pandas as pd
 # from scipy.constants import speed_of_light
 speed_of_light = 3e8 # m/s to match original for testing
 ```
@@ -94,7 +95,60 @@ internal_diameter_lg = horizontal_separator_lg - wire_diameter_mm/1000.0 #idiam1
 height_lg = horizontal_separator_lg / width_height_ratio # height1, H1=
 ```
 
+```{python}
+#| label: print-large-loop-values
+data_lg = {
+    'Names': [
+        'Total length',
+        'Vertical separator',
+        'Total compensated length',
+        'Compensated vertical separation',
+        'Antenna height',
+        'Internal diameter',
+        'Horizontal separator',
+        'compensated horizontal separation',
+        ],
+    'Labels' :[
+        '',
+        '',
+        '',
+        '',
+        'H1=',
+        'Di1=',
+        'D1=',
+        'Dc1=',
+        ],
+    'Values': [
+        total_length_lg,
+        vertical_separation_lg,
+        total_compensated_length_lg,
+        vertical_separation_compensated_lg,
+        height_lg,
+        internal_diameter_lg,
+        horizontal_separator_lg,
+        horizontal_compensated_separator_lg,
+        ]
+    }
+df = pd.DataFrame(data_lg)
+df
+```
+
 ### Smaller loop
+
+This is also referred to as loop 2. These are basically the same calculations except for the 0.975 factor instead of the 1.026 factor.
+
+```{python}
+#| label: smaller-loop-values
+total_length_sm = compensated_wavelength * 0.975 # total2
+total_compensated_length_sm = total_length_sm + 4 * bending_correction_mm/1000 # total2c
+horizontal_separator_sm =  0.5 *  total_compensated_length_sm/ \
+           (1 + np.sqrt(1/width_height_ratio**2 + (number_turns*np.pi)**2)) # rad2, D2=
+horizontal_compensated_separator_sm = horizontal_separator_sm - 2*bending_radius_mm/1000.0 # rad2c, D2c=
+vertical_separation_sm = (total_compensated_length_sm - 2*horizontal_separator_sm)/2 # vert2
+vertical_separation_compensated_sm = vertical_separation_sm - 2*bending_radius_mm/1000.0 # vert2c
+internal_diameter_sm = horizontal_separator_sm - wire_diameter_mm/1000.0 #idiam1, Di2=
+height_sm = horizontal_separator_sm / width_height_ratio # height2, H2=
+```
 
 ## Legend from original
 
