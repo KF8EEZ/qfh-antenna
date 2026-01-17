@@ -7,6 +7,8 @@ Originally interested in the idea because of this [Cornell project](https://crow
 This calculator is referred to everywhere:
 <http://jcoppens.com/ant/qfh/calc.en.php>
 
+But now appears to be down. However the internet arhive has it: <https://web.archive.org/web/20250915134142/https://jcoppens.com/ant/qfh/calc.en.php>
+
 ## VHF and UHF
 
 - <https://uuki.kapsi.fi/qha.html#:~:text=The%20Quadrifilar%20Helical%20Antenna%20(QHA,ever%20find%2C%20in%20all%20directions>
