@@ -1,0 +1,219 @@
+---
+title: QFH antenna calculator
+format: live-html
+pyodide:
+  autorun: true
+  packages:
+    - numpy
+    - pandas
+    - scipy
+---
+
+::: {.callout-warning}
+In the original javascript version, the speed of light was set to $3\times 10^8$ m/s. This code uses a more accurate value of $2.997\times 10^8$ m/s from `scipy` so the results will not be identical. I created a [verify page](/static/verify.qmd) which uses the less precise value for validation.
+:::
+
+## Pyodide setup
+
+```{pyodide}
+#| autorun: true
+import numpy as np
+import pandas as pd
+from scipy.constants import speed_of_light
+```
+
+## QFH design parameters
+
+This is the code block where you should set the vlaues for your antenna design.
+
+```{pyodide}
+#| autorun: true
+frequency_MHz = 137.5 # antenna operating frequency, freq
+number_turns = 1.0 # number of turns to antenna, turns
+length_of_one_turn = 1.0 # measured in wavelengths, [0.25, 0.5, 0.75, 1.0] rwavel
+bending_radius_mm = 15.0 # wrad 
+wire_diameter_mm = 3.0 # diam? , wdiam ?
+width_height_ratio = 0.44 # ratio
+```
+
+## Results
+
+### Wavelength in freespace
+
+```{pyodide}
+#| autorun: true
+wavelength = speed_of_light/(frequency_MHz*1e6) # meters, wavel
+print(f'Wavelength = {wavelength} meters')
+```
+
+### Compensated wavelength
+
+This is a correction for the size of the wire. 
+
+```{pyodide}
+#| autorun: true
+wire_diameter_effective_mm = wire_diameter_mm
+if wire_diameter_effective_mm > 15.0:
+    wire_diameter_effective_mm = 15.0
+
+def delta_length(diam):
+
+    # this is a table of corrections copied directly from qfhcalc.js
+    # the index appears to translate directly to the wire diameter in mm
+    tbl = np.array([1.045, 1.053, 1.060, 1.064, 1.068, 1.070, 1.070, 1.071, 
+             1.071, 1.070, 1.070, 1.070, 1.070, 1.069, 1.069, 1.068,
+	     1.067])
+    intv = int(np.floor(diam))
+    dl = tbl[intv] +  (tbl[intv+1]-tbl[intv])*(diam-intv)
+    return dl
+
+compensated_wavelength = wavelength * delta_length(wire_diameter_effective_mm) # wavelc
+
+print(f'Compensated wavelength = {compensated_wavelength} meters')
+```
+
+### Bending correction
+
+
+```{pyodide}
+#| autorun: true
+#| label: bending-correction
+bending_correction_mm = 2*bending_radius_mm - np.pi*bending_radius_mm/2.0 # bcorr
+
+print(f'Bending correction = {bending_correction_mm} millimeters')
+```
+
+
+### Optimal conductor diameter
+
+This is a confusing calculation in the original because it depends upon the conductor diameter.
+
+```{pyodide}
+#| autorun: true
+#|label: optimal-conductor
+# factor of 1000 converts meter to millimeter
+# factor of 0.0088 is in original code, don't know what it is
+optimal_diameter_mm = 0.0088 * compensated_wavelength * 1000.0
+
+print(f'Optimal condcutor diameter = {optimal_diameter_mm} millimeters')
+```
+
+### Larger loop
+
+This is also referred to as loop 1
+
+```{pyodide}
+#| autorun: true
+#| label: larger-loop-values
+total_length_lg = compensated_wavelength * 1.026 # total1
+total_compensated_length_lg = total_length_lg + 4 * bending_correction_mm/1000 # total1c
+horizontal_separator_lg =  0.5 *  total_compensated_length_lg/ \
+           (1 + np.sqrt(1/width_height_ratio**2 + (number_turns*np.pi)**2)) # rad1, D1=
+horizontal_compensated_separator_lg = horizontal_separator_lg - 2*bending_radius_mm/1000.0 # rad1c, D1C=
+vertical_separation_lg = (total_compensated_length_lg - 2*horizontal_separator_lg)/2 # vert1
+vertical_separation_compensated_lg = vertical_separation_lg - 2*bending_radius_mm/1000.0 # vert1c
+internal_diameter_lg = horizontal_separator_lg - wire_diameter_mm/1000.0 #idiam1, Di1=
+height_lg = horizontal_separator_lg / width_height_ratio # height1, H1=
+```
+
+
+```{pyodide}
+#| autorun: true
+#| label: print-large-loop-values
+data_lg = {
+    'Names': [
+        'Total length',
+        'Vertical separator',
+        'Total compensated length',
+        'Compensated vertical separation',
+        'Antenna height',
+        'Internal diameter',
+        'Horizontal separator',
+        'compensated horizontal separation',
+        ],
+    'Labels' :[
+        '',
+        '',
+        '',
+        '',
+        'H1=',
+        'Di1=',
+        'D1=',
+        'Dc1=',
+        ],
+    'Values': [
+        total_length_lg,
+        vertical_separation_lg,
+        total_compensated_length_lg,
+        vertical_separation_compensated_lg,
+        height_lg,
+        internal_diameter_lg,
+        horizontal_separator_lg,
+        horizontal_compensated_separator_lg,
+        ]
+    }
+df = pd.DataFrame(data_lg)
+df
+```
+
+![Diagram of dimensions for larger loop from [@jcoppens]](/_sources/qfh1am.jpg)
+
+### Smaller loop
+
+This is also referred to as loop 2. These are basically the same calculations except for the 0.975 factor instead of the 1.026 factor.
+
+```{pyodide}
+#| autorun: true
+#| label: smaller-loop-values
+total_length_sm = compensated_wavelength * 0.975 # total2
+total_compensated_length_sm = total_length_sm + 4 * bending_correction_mm/1000 # total2c
+horizontal_separator_sm =  0.5 *  total_compensated_length_sm/ \
+           (1 + np.sqrt(1/width_height_ratio**2 + (number_turns*np.pi)**2)) # rad2, D2=
+horizontal_compensated_separator_sm = horizontal_separator_sm - 2*bending_radius_mm/1000.0 # rad2c, D2c=
+vertical_separation_sm = (total_compensated_length_sm - 2*horizontal_separator_sm)/2 # vert2
+vertical_separation_compensated_sm = vertical_separation_sm - 2*bending_radius_mm/1000.0 # vert2c
+internal_diameter_sm = horizontal_separator_sm - wire_diameter_mm/1000.0 #idiam1, Di2=
+height_sm = horizontal_separator_sm / width_height_ratio # height2, H2=
+```
+
+
+```{pyodide}
+#| autorun: true
+#| label: print-small-loop-values
+data_sm = {
+    'Names': [
+        'Total length',
+        'Vertical separator',
+        'Total compensated length',
+        'Compensated vertical separation',
+        'Antenna height',
+        'Internal diameter',
+        'Horizontal separator',
+        'compensated horizontal separation',
+        ],
+    'Labels' :[
+        '',
+        '',
+        '',
+        '',
+        'H2=',
+        'Di2=',
+        'D2=',
+        'Dc2=',
+        ],
+    'Values': [
+        total_length_sm,
+        vertical_separation_sm,
+        total_compensated_length_sm,
+        vertical_separation_compensated_sm,
+        height_sm,
+        internal_diameter_sm,
+        horizontal_separator_sm,
+        horizontal_compensated_separator_sm,
+        ]
+    }
+df = pd.DataFrame(data_sm)
+df
+```
+
+![Diagram of dimensions for smaller loop from [@jcoppens]](/_sources/qfh2am.jpg)
