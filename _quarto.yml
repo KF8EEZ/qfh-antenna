@@ -1,13 +1,25 @@
 project:
   type: website
+  output-dir: _site
 
 website:
   title: "QFH Antenna"
+
+  site-url: https://kf8eez.github.io/qfh-antenna
+  repo-url: https://github.com/kf8eez/qfh-antenna
+  repo-actions: [edit, source, issue]
+
   navbar:
     left:
       - href: index.qmd
         text: Home
+      - href: live/qfhcalc.qmd
+        text: Calculator
       - about.qmd
+
+
+execute:
+  freeze: true
 
 format:
   html:
