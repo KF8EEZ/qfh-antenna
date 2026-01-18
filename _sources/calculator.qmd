@@ -150,39 +150,82 @@ internal_diameter_sm = horizontal_separator_sm - wire_diameter_mm/1000.0 #idiam1
 height_sm = horizontal_separator_sm / width_height_ratio # height2, H2=
 ```
 
-## Legend from original
+
+```{python}
+#| label: print-small-loop-values
+data_sm = {
+    'Names': [
+        'Total length',
+        'Vertical separator',
+        'Total compensated length',
+        'Compensated vertical separation',
+        'Antenna height',
+        'Internal diameter',
+        'Horizontal separator',
+        'compensated horizontal separation',
+        ],
+    'Labels' :[
+        '',
+        '',
+        '',
+        '',
+        'H2=',
+        'Di2=',
+        'D2=',
+        'Dc2=',
+        ],
+    'Values': [
+        total_length_sm,
+        vertical_separation_sm,
+        total_compensated_length_sm,
+        vertical_separation_compensated_sm,
+        height_sm,
+        internal_diameter_sm,
+        horizontal_separator_sm,
+        horizontal_compensated_separator_sm,
+        ]
+    }
+df = pd.DataFrame(data_sm)
+df
+```
+
+## Original
+
+![Screenshot of original page captured by internet archive using the same parameters in this page.](/_sources/Screenshot-jcoppens-test.png)
+
+### Legend of parameters copied from original
 
 This calculator generates a lot of data! Take care in the use of the information in order not to make mistakes...
 Here's a little explanation:
 
 
-Design frequency
-Evident?
-Number of turns (twist)
-What's the twist of the antenna? (normally 0.5 (180 degrees)
-Length of one turn
-A few variations of the antenna exist. Normally the circumference (length of the loop) is 1 wavelength, but 1.5 wavelength and 2 wavelength versions exist.
-Bending diameter
-As it's impossible to bend the corner abruptly at 90 degrees, this value is needed for the calculations. It's measured from the bending center to the center of the tube.
-Conductor diameter
-External diameter of the tube or coax cable.
-Diameter/height ratio
-Most frequently this ratio is 0.44, but slightly lower values (0.3 to 0.4) give better horizon coverage.
-Wavelength
-Wavelength, corresponding to the selected frequency.
-Compensated wavelength
-Wavelength, compensated according to the conductor diameter.
-Bending correction
-Correction value needed according to the bending diameter.
-Total length
-Total length of the loop, before compensation.
-Total loop cmpensated length
-Total length of the loop, compensated for the bending effect, and the fact that the loop must be slightly larger (or smaller). This is the amount of tubing necessary for this loop.
-Compensated vertical separation
-Vertical separation (without the 'bends').
-Compensated horizontal separation
-This is in fact the horizontal part without the 'bends', and corresponds to the horizontal pipe necessary to support the cable.
-Antenna height
-Height of the loop (twisted!).
-Internal diameter
-The diameter of the (imaginary) cylinder on which the loop would be wound.
+- Design frequency
+  - Evident?
+- Number of turns (twist)
+  - What's the twist of the antenna? (normally 0.5 (180 degrees)
+- Length of one turn
+  - A few variations of the antenna exist. Normally the circumference (length of the loop) is 1 wavelength, but 1.5 wavelength and 2 wavelength versions exist.
+- Bending diameter
+  - As it's impossible to bend the corner abruptly at 90 degrees, this value is needed for the calculations. It's measured from the bending center to the center of the tube.
+- Conductor diameter
+  - External diameter of the tube or coax cable.
+- Diameter/height ratio
+  - Most frequently this ratio is 0.44, but slightly lower values (0.3 to 0.4) give better horizon coverage.
+- Wavelength
+  - Wavelength, corresponding to the selected frequency.
+- Compensated wavelength
+  - Wavelength, compensated according to the conductor diameter.
+- Bending correction
+  - Correction value needed according to the bending diameter.
+- Total length
+  - Total length of the loop, before compensation.
+- Total loop cmpensated length
+  - Total length of the loop, compensated for the bending effect, and the fact that the loop must be slightly larger (or smaller). This is the amount of tubing necessary for this loop.
+- Compensated vertical separation
+  - Vertical separation (without the 'bends').
+- Compensated horizontal separation
+  - This is in fact the horizontal part without the 'bends', and corresponds to the horizontal pipe necessary to support the cable.
+- Antenna height
+  - Height of the loop (twisted!).
+- Internal diameter
+  - The diameter of the (imaginary) cylinder on which the loop would be wound.
