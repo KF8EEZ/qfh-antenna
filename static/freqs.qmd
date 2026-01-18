@@ -1,0 +1,27 @@
+---
+title: Allocated requency bands
+format: html
+---
+
+These are some notes on allocated frequency bands that may be helpful. Amateur radio band can be found at the [ARRL site](http://www.arrl.org/frequency-allocations). These are focused on US allocations. 
+
+## LoRa 
+
+### APRS
+
+for APRS over LoRa there's not well-defined frequencies. 
+
+- UHF - 433.775
+- 33mm -
+  - APRS: 916.5 MHz 
+  
+### Meshtastic 
+
+- [LongFast: 906.875 MHz](https://meshtastic.org/docs/overview/radio-settings/)
+
+
+## GPS
+
+- L1: 1575.42 MHz
+- L2: 1227.60 MHz
+- L5: 1176 MHz
