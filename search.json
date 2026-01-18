@@ -1,0 +1,93 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quadrafilar Helicoidal Antenna",
+    "section": "",
+    "text": "There are references and design information for a QuadraFilar Helicoidal (QFH) antenna.\nThere is a live calcuator based on the highly cited work of (Coppens 2025. Accessed 2026-01-18).\nOriginally interested in the idea because of this Cornell project that recommended one for a TinyGS ground site."
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Quadrafilar Helicoidal Antenna",
+    "section": "",
+    "text": "There are references and design information for a QuadraFilar Helicoidal (QFH) antenna.\nThere is a live calcuator based on the highly cited work of (Coppens 2025. Accessed 2026-01-18).\nOriginally interested in the idea because of this Cornell project that recommended one for a TinyGS ground site."
+  },
+  {
+    "objectID": "index.html#links-to-specific-designs",
+    "href": "index.html#links-to-specific-designs",
+    "title": "Quadrafilar Helicoidal Antenna",
+    "section": "Links to specific designs",
+    "text": "Links to specific designs\n\nVHF and UHF\n\nhttps://uuki.kapsi.fi/qha.html#:~:text=The%20Quadrifilar%20Helical%20Antenna%20(QHA,ever%20find%2C%20in%20all%20directions\n\n\n\nDesigns for 433 MHz\n\nhttps://www.thingiverse.com/thing:5878204/\nhttps://www.printables.com/model/787650-fullwave-compact-qfh-antenna-for-433mhz-band\nhttps://www.printables.com/model/1293002-qfh-antenna-for-435-mhz-satellites\n\n\n\nGPS design L1 band\n\nhttps://forum.allaboutcircuits.com/threads/diy-gps-module-qfh-antenna.110474/\nhttps://lea.hamradio.si/~s53mv/navsats/analog.html\nhttp://schripsema.org/pa3hdf/projects/gpsantenna/gpsantenna.html\nhttps://www.scribd.com/doc/61729826/A-Home-Made-Helical-Antenna-for-a-GPS\n\napparently a screenshot from another link that is dead.\nI got my own screenshot"
+  },
+  {
+    "objectID": "live/qfhcalc.html",
+    "href": "live/qfhcalc.html",
+    "title": "QFH antenna calculator",
+    "section": "",
+    "text": "This cacluator is based on the work of (Coppens 2025. Accessed 2026-01-18). The original web-page is not online as of 2026-01-18 so I wrote this page to perform the calculations. This is live python code, you can edit the code blocks and rerun the calculations for different antenna parameters in order to customize to your scenario."
+  },
+  {
+    "objectID": "live/qfhcalc.html#pyodide-setup",
+    "href": "live/qfhcalc.html#pyodide-setup",
+    "title": "QFH antenna calculator",
+    "section": "Pyodide setup",
+    "text": "Pyodide setup"
+  },
+  {
+    "objectID": "live/qfhcalc.html#qfh-design-parameters",
+    "href": "live/qfhcalc.html#qfh-design-parameters",
+    "title": "QFH antenna calculator",
+    "section": "QFH design parameters",
+    "text": "QFH design parameters\nThis is the code block where you should set the vlaues for your antenna design."
+  },
+  {
+    "objectID": "live/qfhcalc.html#results",
+    "href": "live/qfhcalc.html#results",
+    "title": "QFH antenna calculator",
+    "section": "Results",
+    "text": "Results\n\nWavelength in freespace\n\n\n\n\n\n\n\n\nCompensated wavelength\nThis is a correction for the size of the wire.\n\n\n\n\n\n\n\n\nBending correction\n\n\n\n\n\n\n\n\nOptimal conductor diameter\nThis is a confusing calculation in the original because it depends upon the conductor diameter.\n\n\n\n\n\n\n\n\nLarger loop\nThis is also referred to as loop 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiagram of dimensions for larger loop from (Coppens 2025. Accessed 2026-01-18)\n\n\n\n\nSmaller loop\nThis is also referred to as loop 2. These are basically the same calculations except for the 0.975 factor instead of the 1.026 factor.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiagram of dimensions for smaller loop from (Coppens 2025. Accessed 2026-01-18)"
+  },
+  {
+    "objectID": "static/verify.html",
+    "href": "static/verify.html",
+    "title": "QFH calcuation verification",
+    "section": "",
+    "text": "This is based on https://jcoppens.com/ant/qfh/calc.en.php which now seems to be down but can be found on the internet archive at https://web.archive.org/web/20250915134142/https://jcoppens.com/ant/qfh/calc.en.php.\nFor testing of javascript in original, I used this page https://jsconsole.com/"
+  },
+  {
+    "objectID": "static/verify.html#python-imports",
+    "href": "static/verify.html#python-imports",
+    "title": "QFH calcuation verification",
+    "section": "Python imports",
+    "text": "Python imports\nCompute wavelength. Original website used \\(c=3\\times 10^8\\) m/s. For testing I’m using that value here.\n\nimport numpy as np\nimport pandas as pd\n# from scipy.constants import speed_of_light\nspeed_of_light = 3e8 # m/s to match original for testing"
+  },
+  {
+    "objectID": "static/verify.html#design-parameters",
+    "href": "static/verify.html#design-parameters",
+    "title": "QFH calcuation verification",
+    "section": "Design parameters",
+    "text": "Design parameters\n\nfrequency_MHz = 137.5 # antenna operating frequency, freq\nnumber_turns = 1.0 # number of turns to antenna, turns\nlength_of_one_turn = 1.0 # measured in wavelengths, [0.25, 0.5, 0.75, 1.0] rwavel\nbending_radius_mm = 15.0 # wrad \nwire_diameter_mm = 3.0 # diam? , wdiam ?\nwidth_height_ratio = 0.44 # ratio"
+  },
+  {
+    "objectID": "static/verify.html#results",
+    "href": "static/verify.html#results",
+    "title": "QFH calcuation verification",
+    "section": "Results",
+    "text": "Results\n\nWavelength in free space\n\nwavelength = speed_of_light/(frequency_MHz*1e6) # meters, wavel\n\n\n\nCompensated wavelength\nThis is a correction for the size of the wire.\n\nwire_diameter_effective_mm = wire_diameter_mm\nif wire_diameter_effective_mm &gt; 15.0:\n    wire_diameter_effective_mm = 15.0\n\n\ndef delta_length(diam):\n\n    # this is a table of corrections copied directly from qfhcalc.js\n    # the index appears to translate directly to the wire diameter in mm\n    tbl = np.array([1.045, 1.053, 1.060, 1.064, 1.068, 1.070, 1.070, 1.071, \n             1.071, 1.070, 1.070, 1.070, 1.070, 1.069, 1.069, 1.068,\n         1.067])\n    intv = int(np.floor(diam))\n    print(intv,tbl[intv])\n    dl = tbl[intv] +  (tbl[intv+1]-tbl[intv])*(diam-intv)\n    return dl\n\ncompensated_wavelength = wavelength * delta_length(wire_diameter_effective_mm) # wavelc\n\n3 1.064\n\n\n\n\nBending correction\n\nbending_correction_mm = 2*bending_radius_mm - np.pi*bending_radius_mm/2.0 # bcorr\n\n\n\nOptimal conductor diameter\nThis is a confusing calculation in the original because it depends upon the conductor diameter.\n\n# factor of 1000 converts meter to millimeter\n# factor of 0.0088 is in original code, don't know what it is\noptimal_diameter_mm = 0.0088 * compensated_wavelength * 1000.0\n\n\n\nLarger loop\nThis is also referred to as loop 1\n\ntotal_length_lg = compensated_wavelength * 1.026 # total1\ntotal_compensated_length_lg = total_length_lg + 4 * bending_correction_mm/1000 # total1c\nhorizontal_separator_lg =  0.5 *  total_compensated_length_lg/ \\\n           (1 + np.sqrt(1/width_height_ratio**2 + (number_turns*np.pi)**2)) # rad1, D1=\nhorizontal_compensated_separator_lg = horizontal_separator_lg - 2*bending_radius_mm/1000.0 # rad1c, D1C=\nvertical_separation_lg = (total_compensated_length_lg - 2*horizontal_separator_lg)/2 # vert1\nvertical_separation_compensated_lg = vertical_separation_lg - 2*bending_radius_mm/1000.0 # vert1c\ninternal_diameter_lg = horizontal_separator_lg - wire_diameter_mm/1000.0 #idiam1, Di1=\nheight_lg = horizontal_separator_lg / width_height_ratio # height1, H1=\n\n\ndata_lg = {\n    'Names': [\n        'Total length',\n        'Vertical separator',\n        'Total compensated length',\n        'Compensated vertical separation',\n        'Antenna height',\n        'Internal diameter',\n        'Horizontal separator',\n        'compensated horizontal separation',\n        ],\n    'Labels' :[\n        '',\n        '',\n        '',\n        '',\n        'H1=',\n        'Di1=',\n        'D1=',\n        'Dc1=',\n        ],\n    'Values': [\n        total_length_lg,\n        vertical_separation_lg,\n        total_compensated_length_lg,\n        vertical_separation_compensated_lg,\n        height_lg,\n        internal_diameter_lg,\n        horizontal_separator_lg,\n        horizontal_compensated_separator_lg,\n        ]\n    }\ndf = pd.DataFrame(data_lg)\ndf\n\n\n\n\n\n\n\n\nNames\nLabels\nValues\n\n\n\n\n0\nTotal length\n\n2.381812\n\n\n1\nVertical separator\n\n0.956978\n\n\n2\nTotal compensated length\n\n2.407565\n\n\n3\nCompensated vertical separation\n\n0.926978\n\n\n4\nAntenna height\nH1=\n0.560918\n\n\n5\nInternal diameter\nDi1=\n0.243804\n\n\n6\nHorizontal separator\nD1=\n0.246804\n\n\n7\ncompensated horizontal separation\nDc1=\n0.216804\n\n\n\n\n\n\n\n\n\nSmaller loop\nThis is also referred to as loop 2. These are basically the same calculations except for the 0.975 factor instead of the 1.026 factor.\n\ntotal_length_sm = compensated_wavelength * 0.975 # total2\ntotal_compensated_length_sm = total_length_sm + 4 * bending_correction_mm/1000 # total2c\nhorizontal_separator_sm =  0.5 *  total_compensated_length_sm/ \\\n           (1 + np.sqrt(1/width_height_ratio**2 + (number_turns*np.pi)**2)) # rad2, D2=\nhorizontal_compensated_separator_sm = horizontal_separator_sm - 2*bending_radius_mm/1000.0 # rad2c, D2c=\nvertical_separation_sm = (total_compensated_length_sm - 2*horizontal_separator_sm)/2 # vert2\nvertical_separation_compensated_sm = vertical_separation_sm - 2*bending_radius_mm/1000.0 # vert2c\ninternal_diameter_sm = horizontal_separator_sm - wire_diameter_mm/1000.0 #idiam1, Di2=\nheight_sm = horizontal_separator_sm / width_height_ratio # height2, H2=\n\n\ndata_sm = {\n    'Names': [\n        'Total length',\n        'Vertical separator',\n        'Total compensated length',\n        'Compensated vertical separation',\n        'Antenna height',\n        'Internal diameter',\n        'Horizontal separator',\n        'compensated horizontal separation',\n        ],\n    'Labels' :[\n        '',\n        '',\n        '',\n        '',\n        'H2=',\n        'Di2=',\n        'D2=',\n        'Dc2=',\n        ],\n    'Values': [\n        total_length_sm,\n        vertical_separation_sm,\n        total_compensated_length_sm,\n        vertical_separation_compensated_sm,\n        height_sm,\n        internal_diameter_sm,\n        horizontal_separator_sm,\n        horizontal_compensated_separator_sm,\n        ]\n    }\ndf = pd.DataFrame(data_sm)\ndf\n\n\n\n\n\n\n\n\nNames\nLabels\nValues\n\n\n\n\n0\nTotal length\n\n2.263418\n\n\n1\nVertical separator\n\n0.909918\n\n\n2\nTotal compensated length\n\n2.289170\n\n\n3\nCompensated vertical separation\n\n0.879918\n\n\n4\nAntenna height\nH2=\n0.533334\n\n\n5\nInternal diameter\nDi2=\n0.231667\n\n\n6\nHorizontal separator\nD2=\n0.234667\n\n\n7\ncompensated horizontal separation\nDc2=\n0.204667"
+  },
+  {
+    "objectID": "static/verify.html#original",
+    "href": "static/verify.html#original",
+    "title": "QFH calcuation verification",
+    "section": "Original",
+    "text": "Original\n\n\n\nScreenshot of original page captured by internet archive using the same parameters in this page.\n\n\n\nLegend of parameters copied from original\nThis calculator generates a lot of data! Take care in the use of the information in order not to make mistakes… Here’s a little explanation:\n\nDesign frequency\n\nEvident?\n\nNumber of turns (twist)\n\nWhat’s the twist of the antenna? (normally 0.5 (180 degrees)\n\nLength of one turn\n\nA few variations of the antenna exist. Normally the circumference (length of the loop) is 1 wavelength, but 1.5 wavelength and 2 wavelength versions exist.\n\nBending diameter\n\nAs it’s impossible to bend the corner abruptly at 90 degrees, this value is needed for the calculations. It’s measured from the bending center to the center of the tube.\n\nConductor diameter\n\nExternal diameter of the tube or coax cable.\n\nDiameter/height ratio\n\nMost frequently this ratio is 0.44, but slightly lower values (0.3 to 0.4) give better horizon coverage.\n\nWavelength\n\nWavelength, corresponding to the selected frequency.\n\nCompensated wavelength\n\nWavelength, compensated according to the conductor diameter.\n\nBending correction\n\nCorrection value needed according to the bending diameter.\n\nTotal length\n\nTotal length of the loop, before compensation.\n\nTotal loop cmpensated length\n\nTotal length of the loop, compensated for the bending effect, and the fact that the loop must be slightly larger (or smaller). This is the amount of tubing necessary for this loop.\n\nCompensated vertical separation\n\nVertical separation (without the ‘bends’).\n\nCompensated horizontal separation\n\nThis is in fact the horizontal part without the ‘bends’, and corresponds to the horizontal pipe necessary to support the cable.\n\nAntenna height\n\nHeight of the loop (twisted!).\n\nInternal diameter\n\nThe diameter of the (imaginary) cylinder on which the loop would be wound."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  }
+]
