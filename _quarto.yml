@@ -18,4 +18,5 @@ format:
     toc: true
 
 
-
+bibliography:
+  - refs/qfh.bib
