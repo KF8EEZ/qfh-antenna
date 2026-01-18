@@ -1,0 +1,6 @@
+---
+title: QFH calcuation verification
+format: html
+---
+
+{{< include /_sources/calculator.qmd >}}
