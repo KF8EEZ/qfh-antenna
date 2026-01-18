@@ -9,6 +9,8 @@ pyodide:
     - scipy
 ---
 
+This cacluator is based on the work of [@jcoppens]. The original web-page is not online as of 2026-01-18 so I wrote this page to perform the calculations. This is live python code, you can edit the code blocks and rerun the calculations for different antenna parameters in order to customize to your scenario.
+
 ::: {.callout-warning}
 In the original javascript version, the speed of light was set to $3\times 10^8$ m/s. This code uses a more accurate value of $2.997\times 10^8$ m/s from `scipy` so the results will not be identical. I created a [verify page](/static/verify.qmd) which uses the less precise value for validation.
 :::
