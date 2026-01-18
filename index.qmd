@@ -21,6 +21,7 @@ Originally interested in the idea because of this [Cornell project](https://crow
 - <https://www.thingiverse.com/thing:5878204/>
 - <https://www.printables.com/model/787650-fullwave-compact-qfh-antenna-for-433mhz-band>
 - <https://www.printables.com/model/1293002-qfh-antenna-for-435-mhz-satellites>
+- <https://www.printables.com/model/759022-qfa-qfh-antenna-70cm-band/comments>
 
 ### GPS design L1 band
 
