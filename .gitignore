@@ -2,3 +2,5 @@
 
 #emacs
 *~
+
+**/*.quarto_ipynb
