@@ -18,7 +18,14 @@
     "href": "index.html#links-to-specific-designs",
     "title": "Quadrafilar Helicoidal Antenna",
     "section": "Links to specific designs",
-    "text": "Links to specific designs\n\nVHF and UHF\n\nhttps://uuki.kapsi.fi/qha.html#:~:text=The%20Quadrifilar%20Helical%20Antenna%20(QHA,ever%20find%2C%20in%20all%20directions\n\n\n\nDesigns for 433 MHz\n\nhttps://www.thingiverse.com/thing:5878204/\nhttps://www.printables.com/model/787650-fullwave-compact-qfh-antenna-for-433mhz-band\nhttps://www.printables.com/model/1293002-qfh-antenna-for-435-mhz-satellites\n\n\n\nGPS design L1 band\n\nhttps://forum.allaboutcircuits.com/threads/diy-gps-module-qfh-antenna.110474/\nhttps://lea.hamradio.si/~s53mv/navsats/analog.html\nhttp://schripsema.org/pa3hdf/projects/gpsantenna/gpsantenna.html\nhttps://www.scribd.com/doc/61729826/A-Home-Made-Helical-Antenna-for-a-GPS\n\napparently a screenshot from another link that is dead.\nI got my own screenshot"
+    "text": "Links to specific designs\n\nVHF\n\nhttp://www.rocob.plus.com/main.html\n\n\n\nVHF and UHF\n\nhttps://uuki.kapsi.fi/qha.html (Niskanen 2026)\n\n\n\nDesigns for UHF 433 MHz\n\nhttps://www.thingiverse.com/thing:5878204/\nhttps://www.printables.com/model/787650-fullwave-compact-qfh-antenna-for-433mhz-band\nhttps://www.printables.com/model/1293002-qfh-antenna-for-435-mhz-satellites\nhttps://www.printables.com/model/759022-qfa-qfh-antenna-70cm-band/comments\n\n\n\n868 MHz\n\nhttps://github.com/cernohorsky/QFH-Antenna-868MHz\n\n\n\nGPS design L1 band\n\nhttps://forum.allaboutcircuits.com/threads/diy-gps-module-qfh-antenna.110474/\nhttps://lea.hamradio.si/~s53mv/navsats/analog.html\nhttp://schripsema.org/pa3hdf/projects/gpsantenna/gpsantenna.html\nhttps://www.scribd.com/doc/61729826/A-Home-Made-Helical-Antenna-for-a-GPS\n\napparently a screenshot from another link that is dead.\nI got my own screenshot\n\n\n\n\n2450 MHz\n\nhttps://www.thingiverse.com/thing:634205"
+  },
+  {
+    "objectID": "index.html#references",
+    "href": "index.html#references",
+    "title": "Quadrafilar Helicoidal Antenna",
+    "section": "References",
+    "text": "References\n\n\nCoppens, John. 2025. Accessed 2026-01-18. “Quadrifilar Helicoidal.” Online. https://web.archive.org/web/20250915134142/https://jcoppens.com/ant/qfh/calc.en.php.\n\n\nNiskanen, Antti J. 2026. “OH2GVB Quadrifilar Helical Antennas.” Online. Accessed 2026-01-18. https://uuki.kapsi.fi/qha.html."
   },
   {
     "objectID": "live/qfhcalc.html",
@@ -47,6 +54,27 @@
     "title": "QFH antenna calculator",
     "section": "Results",
     "text": "Results\n\nWavelength in freespace\n\n\n\n\n\n\n\n\nCompensated wavelength\nThis is a correction for the size of the wire.\n\n\n\n\n\n\n\n\nBending correction\n\n\n\n\n\n\n\n\nOptimal conductor diameter\nThis is a confusing calculation in the original because it depends upon the conductor diameter.\n\n\n\n\n\n\n\n\nLarger loop\nThis is also referred to as loop 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiagram of dimensions for larger loop from (Coppens 2025. Accessed 2026-01-18)\n\n\n\n\nSmaller loop\nThis is also referred to as loop 2. These are basically the same calculations except for the 0.975 factor instead of the 1.026 factor.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiagram of dimensions for smaller loop from (Coppens 2025. Accessed 2026-01-18)"
+  },
+  {
+    "objectID": "static/freqs.html",
+    "href": "static/freqs.html",
+    "title": "Allocated requency bands",
+    "section": "",
+    "text": "These are some notes on allocated frequency bands that may be helpful. Amateur radio band can be found at the ARRL site. These are focused on US allocations."
+  },
+  {
+    "objectID": "static/freqs.html#lora",
+    "href": "static/freqs.html#lora",
+    "title": "Allocated requency bands",
+    "section": "LoRa",
+    "text": "LoRa\n\nAPRS\nfor APRS over LoRa there’s not well-defined frequencies.\n\nUHF - 433.775\n33mm -\n\nAPRS: 916.5 MHz\n\n\n\n\nMeshtastic\n\nLongFast: 906.875 MHz"
+  },
+  {
+    "objectID": "static/freqs.html#gps",
+    "href": "static/freqs.html#gps",
+    "title": "Allocated requency bands",
+    "section": "GPS",
+    "text": "GPS\n\nL1: 1575.42 MHz\nL2: 1227.60 MHz\nL5: 1176 MHz"
   },
   {
     "objectID": "static/verify.html",
