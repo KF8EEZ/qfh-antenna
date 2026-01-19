@@ -18,7 +18,7 @@
     "href": "index.html#links-to-specific-designs",
     "title": "Quadrafilar Helicoidal Antenna",
     "section": "Links to specific designs",
-    "text": "Links to specific designs\n\nVHF\n\nhttp://www.rocob.plus.com/main.html\n\n\n\nVHF and UHF\n\nhttps://uuki.kapsi.fi/qha.html (Niskanen 2026)\n\n\n\nDesigns for UHF 433 MHz\n\nhttps://www.thingiverse.com/thing:5878204/\nhttps://www.printables.com/model/787650-fullwave-compact-qfh-antenna-for-433mhz-band\nhttps://www.printables.com/model/1293002-qfh-antenna-for-435-mhz-satellites\nhttps://www.printables.com/model/759022-qfa-qfh-antenna-70cm-band/comments\n\n\n\n868 MHz\n\nhttps://github.com/cernohorsky/QFH-Antenna-868MHz\n\n\n\nGPS design L1 band\n\nhttps://forum.allaboutcircuits.com/threads/diy-gps-module-qfh-antenna.110474/\nhttps://lea.hamradio.si/~s53mv/navsats/analog.html\nhttp://schripsema.org/pa3hdf/projects/gpsantenna/gpsantenna.html\nhttps://www.scribd.com/doc/61729826/A-Home-Made-Helical-Antenna-for-a-GPS\n\napparently a screenshot from another link that is dead.\nI got my own screenshot\n\n\n\n\n2450 MHz\n\nhttps://www.thingiverse.com/thing:634205"
+    "text": "Links to specific designs\n\nVHF\n\nhttp://www.rocob.plus.com/main.html\n\n\n\nVHF and UHF\n\nhttps://uuki.kapsi.fi/qha.html (Niskanen 2026)\n\n\n\nDesigns for UHF 433 MHz\n\nhttps://www.thingiverse.com/thing:5878204/\nhttps://www.printables.com/model/787650-fullwave-compact-qfh-antenna-for-433mhz-band\nhttps://www.printables.com/model/1293002-qfh-antenna-for-435-mhz-satellites\nhttps://www.printables.com/model/759022-qfa-qfh-antenna-70cm-band/comments\n\n\n\n868 MHz\n\nhttps://github.com/cernohorsky/QFH-Antenna-868MHz\n\n\n\nGPS design L1 band\n\nhttps://forum.allaboutcircuits.com/threads/diy-gps-module-qfh-antenna.110474/\nhttps://lea.hamradio.si/~s53mv/navsats/analog.html [MatjazVidmar2026]\nhttp://schripsema.org/pa3hdf/projects/gpsantenna/gpsantenna.html\nhttps://www.scribd.com/doc/61729826/A-Home-Made-Helical-Antenna-for-a-GPS\n\napparently a screenshot from another link that is dead.\nI got my own screenshot\n\n\n\n\n2450 MHz\n\nhttps://www.thingiverse.com/thing:634205"
   },
   {
     "objectID": "index.html#references",
@@ -56,27 +56,6 @@
     "text": "Results\n\nWavelength in freespace\n\n\n\n\n\n\n\n\nCompensated wavelength\nThis is a correction for the size of the wire.\n\n\n\n\n\n\n\n\nBending correction\n\n\n\n\n\n\n\n\nOptimal conductor diameter\nThis is a confusing calculation in the original because it depends upon the conductor diameter.\n\n\n\n\n\n\n\n\nLarger loop\nThis is also referred to as loop 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiagram of dimensions for larger loop from (Coppens 2025. Accessed 2026-01-18)\n\n\n\n\nSmaller loop\nThis is also referred to as loop 2. These are basically the same calculations except for the 0.975 factor instead of the 1.026 factor.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiagram of dimensions for smaller loop from (Coppens 2025. Accessed 2026-01-18)"
   },
   {
-    "objectID": "static/freqs.html",
-    "href": "static/freqs.html",
-    "title": "Allocated requency bands",
-    "section": "",
-    "text": "These are some notes on allocated frequency bands that may be helpful. Amateur radio band can be found at the ARRL site. These are focused on US allocations."
-  },
-  {
-    "objectID": "static/freqs.html#lora",
-    "href": "static/freqs.html#lora",
-    "title": "Allocated requency bands",
-    "section": "LoRa",
-    "text": "LoRa\n\nAPRS\nfor APRS over LoRa there’s not well-defined frequencies.\n\nUHF - 433.775\n33mm -\n\nAPRS: 916.5 MHz\n\n\n\n\nMeshtastic\n\nLongFast: 906.875 MHz"
-  },
-  {
-    "objectID": "static/freqs.html#gps",
-    "href": "static/freqs.html#gps",
-    "title": "Allocated requency bands",
-    "section": "GPS",
-    "text": "GPS\n\nL1: 1575.42 MHz\nL2: 1227.60 MHz\nL5: 1176 MHz"
-  },
-  {
     "objectID": "static/verify.html",
     "href": "static/verify.html",
     "title": "QFH calcuation verification",
@@ -110,6 +89,34 @@
     "title": "QFH calcuation verification",
     "section": "Original",
     "text": "Original\n\n\n\nScreenshot of original page captured by internet archive using the same parameters in this page.\n\n\n\nLegend of parameters copied from original\nThis calculator generates a lot of data! Take care in the use of the information in order not to make mistakes… Here’s a little explanation:\n\nDesign frequency\n\nEvident?\n\nNumber of turns (twist)\n\nWhat’s the twist of the antenna? (normally 0.5 (180 degrees)\n\nLength of one turn\n\nA few variations of the antenna exist. Normally the circumference (length of the loop) is 1 wavelength, but 1.5 wavelength and 2 wavelength versions exist.\n\nBending diameter\n\nAs it’s impossible to bend the corner abruptly at 90 degrees, this value is needed for the calculations. It’s measured from the bending center to the center of the tube.\n\nConductor diameter\n\nExternal diameter of the tube or coax cable.\n\nDiameter/height ratio\n\nMost frequently this ratio is 0.44, but slightly lower values (0.3 to 0.4) give better horizon coverage.\n\nWavelength\n\nWavelength, corresponding to the selected frequency.\n\nCompensated wavelength\n\nWavelength, compensated according to the conductor diameter.\n\nBending correction\n\nCorrection value needed according to the bending diameter.\n\nTotal length\n\nTotal length of the loop, before compensation.\n\nTotal loop cmpensated length\n\nTotal length of the loop, compensated for the bending effect, and the fact that the loop must be slightly larger (or smaller). This is the amount of tubing necessary for this loop.\n\nCompensated vertical separation\n\nVertical separation (without the ‘bends’).\n\nCompensated horizontal separation\n\nThis is in fact the horizontal part without the ‘bends’, and corresponds to the horizontal pipe necessary to support the cable.\n\nAntenna height\n\nHeight of the loop (twisted!).\n\nInternal diameter\n\nThe diameter of the (imaginary) cylinder on which the loop would be wound."
+  },
+  {
+    "objectID": "static/freqs.html",
+    "href": "static/freqs.html",
+    "title": "Allocated requency bands",
+    "section": "",
+    "text": "These are some notes on allocated frequency bands that may be helpful. Amateur radio band can be found at the ARRL site. These are focused on US allocations."
+  },
+  {
+    "objectID": "static/freqs.html#lora",
+    "href": "static/freqs.html#lora",
+    "title": "Allocated requency bands",
+    "section": "LoRa",
+    "text": "LoRa\n\nAPRS\nfor APRS over LoRa there’s not well-defined frequencies.\n\nUHF - 433.775\n33mm -\n\nAPRS: 916.5 MHz\n\n\n\n\nMeshtastic\n\nLongFast: 906.875 MHz"
+  },
+  {
+    "objectID": "static/freqs.html#gps",
+    "href": "static/freqs.html#gps",
+    "title": "Allocated requency bands",
+    "section": "GPS",
+    "text": "GPS\n\nL1: 1575.42 MHz\nL2: 1227.60 MHz\nL5: 1176 MHz"
+  },
+  {
+    "objectID": "refs/allrefs.html",
+    "href": "refs/allrefs.html",
+    "title": "All References",
+    "section": "",
+    "text": "Coppens, John. 2025. Accessed 2026-01-18. “Quadrifilar Helicoidal.” Online. https://web.archive.org/web/20250915134142/https://jcoppens.com/ant/qfh/calc.en.php.\n\n\nDavis, Kelby, and Reyhan Baktur. 2022. “Design, Fabrication, and Tuning Techniques of Quadrifilar Helix Antennas for Small Satellites.” In 36th Annual Small Satellite Conference. Utah State University. https://doi.org/10.26077/MH12-RC18.\n\n\nG0HPO. 2026. “QFH Antenna (the Quadrifilar Helical Antenna).” Online. Accessed 2026-01-18. http://www.rocob.plus.com/main.html.\n\n\nHollander, R. W. 1999. “Resonant Quadrafilar Helical Antenna.” Online. Accessed 2026-01-18. http://www.kunstmanen.net/WKfiles/Techdocs/RQHA/RQHA1999-1eng.pdf.\n\n\nMatjaz Vidmar, S53MV. 2026. “A Homemade Receiver for GPS & GLONASS Satellites.” Online. Accessed 2026-01-19. https://lea.hamradio.si/~s53mv/navsats/analog.html.\n\n\nNiskanen, Antti J. 2026. “OH2GVB Quadrifilar Helical Antennas.” Online. Accessed 2026-01-18. https://uuki.kapsi.fi/qha.html.\n\n\nSeamount, Charles Eames. 1989. “The Fractional Turn Quadrifilar Helix Antenna.” Master’s thesis, California State University, Northridge. https://scholarworks.calstate.edu/downloads/pr76f722g.\n\n\nShivandas, Dilipkumar. 2004. “BROADBAND COUNTER-WOUND HELIX ANTENNAFOR LAND MINE DETECTION.” Master’s thesis, Naval Postgraduate School. https://apps.dtic.mil/sti/pdfs/ADA422326.pdf.\n\n\n“The Quadrifilar Helix Antenna.” n.d. Online. Accessed 2026-01-19. http://www.av.it.pt/medidas/data/Manuais & Tutoriais/Software/XilinX/Kirby_SMA_Kit/85033-SN0211/Antenna-related-material/The_Quadrifilar_Helix_Antenna.pdf."
   },
   {
     "objectID": "about.html",
