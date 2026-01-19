@@ -1,0 +1,8 @@
+---
+title: All References
+nocite: |
+  @*
+---
+
+:::{#refs}
+:::
