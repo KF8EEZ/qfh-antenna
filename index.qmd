@@ -34,7 +34,7 @@ Originally interested in the idea because of this [Cornell project](https://crow
 ### GPS design L1 band
 
 - <https://forum.allaboutcircuits.com/threads/diy-gps-module-qfh-antenna.110474/>
-- <https://lea.hamradio.si/~s53mv/navsats/analog.html>
+- <https://lea.hamradio.si/~s53mv/navsats/analog.html> [MatjazVidmar2026]
 - <http://schripsema.org/pa3hdf/projects/gpsantenna/gpsantenna.html>
 - <https://www.scribd.com/doc/61729826/A-Home-Made-Helical-Antenna-for-a-GPS>
   - apparently a screenshot from another link that is dead. 
