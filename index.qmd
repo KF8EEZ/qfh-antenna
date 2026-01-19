@@ -27,6 +27,10 @@ Originally interested in the idea because of this [Cornell project](https://crow
 - <https://www.printables.com/model/1293002-qfh-antenna-for-435-mhz-satellites>
 - <https://www.printables.com/model/759022-qfa-qfh-antenna-70cm-band/comments>
 
+### 868 MHz
+
+- <https://github.com/cernohorsky/QFH-Antenna-868MHz>
+
 ### GPS design L1 band
 
 - <https://forum.allaboutcircuits.com/threads/diy-gps-module-qfh-antenna.110474/>
@@ -35,6 +39,10 @@ Originally interested in the idea because of this [Cornell project](https://crow
 - <https://www.scribd.com/doc/61729826/A-Home-Made-Helical-Antenna-for-a-GPS>
   - apparently a screenshot from another link that is dead. 
   - I got my own [screenshot](/refs/2025-12-12-helical-capture.png)
+
+### 2450 MHz
+
+- <https://www.thingiverse.com/thing:634205>
 
 ## References
 
