@@ -18,7 +18,7 @@ Originally interested in the idea because of this [Cornell project](https://crow
 
 ### VHF and UHF
 
-- <https://uuki.kapsi.fi/qha.html> [@Niskana2026]
+- <https://uuki.kapsi.fi/qha.html> [@Niskanen2026]
 
 ### Designs for UHF 433 MHz
 
